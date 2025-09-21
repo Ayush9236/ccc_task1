@@ -23,7 +23,17 @@ header {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
 
+nav ul li a:hover {
+  color: #ffeaa7;
+  transform: translateY(-3px);
+}
 
 nav ul {
   display: flex;
@@ -52,18 +62,21 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 30px;
-  background: linear-gradient(120deg, #81ecec, #74b9ff);
+  height: 100px;
+  padding: 20px ;
+  
   border-radius: 0 0 40px 40px;
+  box-sizing:border-box;
+  background-image: url(https://t4.ftcdn.net/jpg/01/46/40/35/360_F_146403506_381OxD624hppWMQcIbjLuSr8TCW1q2lj.jpg);
 }
 .t h1 {
     font-size: 3.5rem;
-    font-weight: 800; 
+    font-weight: 700; 
     color: #b90e74;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .t p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #444;
     max-width: 600px; 
 }
@@ -71,6 +84,7 @@ nav ul li a:hover {
 .t form {
   display: flex;
   gap: 10px;
+  margin-top: 10px;
   
 }
 
@@ -99,9 +113,18 @@ nav ul li a:hover {
 }
 
 .i img {
-  max-width: 400px;
+  max-width: 300px;
   width: 100%;
   animation: float 3s ease-in-out infinite;
+}
+.page {
+  padding: 30px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .page {
   padding: 50px 30px;
@@ -229,6 +252,18 @@ nav ul li a:hover {
   font-size: 2.5;
   color: #ee3a3a;
 }
+.rules h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 20px;
+  animation: slideIn 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
 
 .i {
     background: rgba(24, 2, 2, 0.8);
@@ -246,10 +281,10 @@ nav ul li a:hover {
 .rules {
   background: #2edec6;
   color: #333;
-  padding: 60px;
+  padding: 50px;
   text-align: center;
   border-radius: 25px;
-  margin: 50px auto;
+  margin: 60px auto;
   max-width: 900px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
@@ -276,7 +311,11 @@ nav ul li a:hover {
   position: relative;
   color: #555;
 }
-
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
 .rules ul li::before {
   content: '📚';
   position: absolute;
